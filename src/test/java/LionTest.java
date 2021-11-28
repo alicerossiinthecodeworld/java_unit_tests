@@ -21,14 +21,14 @@ public class LionTest {
 
     @Test
     public void maleLionHasManeTest() throws Exception {
-    Lion lion = new Lion("Самец");
+    Lion lion = new Lion("Самец", feline);
     boolean actual = lion.doesHaveMane();
     boolean expected = true;
     assertEquals(expected,actual);
     }
     @Test
     public void lionessHasNoManeTest() throws Exception {
-        Lion lioness = new Lion("Самка");
+        Lion lioness = new Lion("Самка", feline);
         boolean actual = lioness.doesHaveMane();
         boolean expected = false;
         assertEquals(expected,actual);
@@ -36,7 +36,7 @@ public class LionTest {
     @Test
     public void unexpectedLionSexExceptionTest() throws Exception {
         try{
-            Lion leo = new Lion("Самк");
+            Lion leo = new Lion("Самк", feline);
             fail("Exception");}
             catch(Exception ex){
                 assertThat(ex.getMessage(), containsString("Используйте допустимые значения пола животного - самец или самка"));
